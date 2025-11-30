@@ -11,10 +11,9 @@
 
 ## Обработка данных
 
-Для более качественного прогноза модели мы комбинируем фичи, например: ``` df_new['credit_to_income_ratio_12m'] = df_new['turn_cur_cr_avg_act_v2'] / df_new['salary_6to12m_avg'].replace(0, np.nan)
-    df_new['debit_to_credit_ratio_12m'] = df_new['turn_cur_db_sum_v2'] / df_new['turn_cur_cr_sum_v2'].replace(0, np.nan)
-    df_new['credit_debit_diff_3m'] = df_new['avg_cur_cr_turn'] - df_new['avg_cur_db_turn']
-```
+Для более качественного прогноза модели мы комбинируем фичи, например: ```df_new['credit_to_income_ratio_12m'] = df_new['turn_cur_cr_avg_act_v2'] / df_new['salary_6to12m_avg'].replace(0, np.nan)```
+
+Также особое внимание уделено категории профессия: например, для молодых людей с пропущенным значением в "профессии" мы предполагаем, что это может быть студент, также как и достаточно взрослый человек с пропущенным значением в профессии может быть пенсионер 
 
 ## Модель 
 
